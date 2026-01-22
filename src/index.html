@@ -8,21 +8,30 @@
 <body>
     <div class="layout">
         <header>
-            <h1>Listas de Tarefas</h1>
+            <div>
+                <img src="./images/logoLista.png" alt="logo">
+                <h1>Listas de Tarefas</h1>
+            </div>
         </header>
         <aside>
             <h2>Projetos</h2>
             <div class="aside-container-projects">
-
+                
             </div>
-            <button id="button-add-project-sidebar" class="button-add-project-aside">Adicionar projeto</button>
+            <div class="container-project-button">
+                <button id="button-add-project-sidebar" class="button-add-project-aside">Adicionar projeto</button>
+            </div>
         </aside>
         <main>
             <div class="projects">
 
             </div>
+            <div class="container-add-todo-button">
+
+            </div>
+            <!-- CRIAR PROJETO -->
             <div class="container-form-add-project">
-                <form method="get" class="form-add-project">
+                <form class="form-add-project">
                     <h3>Criar um projeto</h3>
                     <label for="title">
                         Titulo: <input type="text" id="title" placeholder="Titulo"/>
@@ -33,6 +42,32 @@
                     </div>
                 </form>
             </div>
+            <!-- ADICIONAR TAREFA/ DETALHES/ EDITAR -->
+             <div class="container-add-todo hidden">
+                <form class="container-add-todo-form">
+                    <h3 class="todo-form-title">Criar uma Tarefa</h3>
+                    <label for="todo-name">
+                        Nome: <input type="text" id="todo-name">
+                    </label>
+                    <label for="todo-description">
+                        Descricao: <textarea id="todo-description"></textarea>
+                    </label>
+                    <label for="todo-date">
+                        Data: <input type="date" id="todo-date">
+                    </label>
+                    <label for="todo-priority">Prioridade:
+                    <select name="todo-priority" id="todo-priority">
+                        <option value="priority-law">Baixa</option>
+                        <option value="priority-middle">Normal</option>
+                        <option value="priority-high">Alta</option>
+                    </select>
+                    </label>
+                    <div class="container-buttons">
+                        <button id="todo-cancel">Cancelar</button>
+                        <button id="todo-criate">Criar</button>
+                    </div>
+                </form>
+             </div>
         </main>
         <footer>
             <address>
