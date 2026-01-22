@@ -44,8 +44,17 @@ header,aside,main,footer{
 /* ESTILOS DO HEADER */
 header{
     width: 100%;
-    padding: 30px 20px;
+    padding: 20px 0;
     background-color: #808080;
+}
+header div img{
+    width: 50px;
+    height: 50px;
+}
+header div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 header h1{
     font-size: 2em;
@@ -65,21 +74,33 @@ aside h2{
     color: #000;
     margin: 10px 0 0 10px;
 }
-.button-add-project-aside,
-.aside-container-projects button{
+.container-add-todo-button button,
+.container-project-button button{
     background-color: transparent;
     border: none;
-    margin-left: 10px;
     font-size: 1.02em;
 }
-aside div{
-    width: 220px;
-}
-aside button{
+.container-project-button{
     width: 225px;
+    height: 45px;
     padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
-aside button:hover{
+.container-project-button #button-add-project-sidebar{
+    display: flex;
+    align-items: center;
+}
+.icon-delete,
+.icon-delete-todo,
+.add-sign{
+    width: 20px;
+    height: 20px;
+}
+aside .container-project-button:hover{
     background-color: #808080a5;
     color: #fff;
 }
@@ -87,18 +108,27 @@ aside button:hover{
 /* ESTILOS DO MAIN */
 main{
     width: 100%;
+    padding: 20px;
     background-color: #87ceeb70;
 }
-.container-form-add-project{
-    display: none;
+.container-form-add-project,
+.container-add-todo{
     width: 300px;
     height: 300px;
     border: 2px solid #000;
     border-radius: 10px;
     position: absolute;
+}
+.container-add-todo{
+    top: 150px;
+    left: 650px;
+}
+.container-form-add-project{
+    display: none;
     top: 200px;
     left: 300px;
 }
+.container-add-todo-form,
 .form-add-project{
     width: 100%;
     height: 100%;
@@ -107,7 +137,8 @@ main{
     justify-content: space-between;
     align-items: center;
 }
-.form-add-project h3{
+.form-add-project h3,
+.container-add-todo-form h3{
     font-size: 1.5em;
     color: #fff;
     width: 100%;
@@ -116,21 +147,66 @@ main{
     background-color: #808080;
     padding: 15px 0;
 }
-.form-add-project label{
+.form-add-project label,
+.container-add-todo-form label{
     font-size: 1.06em;
     font-weight: bold;
 }
-.form-add-project input{
+.form-add-project input,
+.container-add-todo-form input{
     height: 30px;
     padding-left: 10px;
 }
-.form-add-project .container-buttons{
-    margin-bottom: 40px;
+.container-buttons{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
-.form-add-project .container-buttons button{
+.container-buttons button{
     width: 100px;
     height: 30px;
 }
+.hidden{
+    display: none;
+}
+
+/* ESTILO DA TAREFA TAREFAS */
+.todo-item{
+    justify-content: space-between;
+}
+.todo-item,
+.container-add-todo-button button{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 25px 10px;
+    border-radius: 10px;
+}
+#button-add-project-sidebar::before, 
+.container-add-todo-button button::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url('./images/sinalAdicionar.png') center / cover no-repeat;
+    margin-right: 5px;
+ }
+.remove-todo{
+    border: none;
+    background-color: transparent;
+}
+.container-add-todo-button button{
+    text-align: left;
+}
+.projects h3{
+    margin-bottom: 20px;
+}
+.todo-item:hover, .container-add-todo-button button:hover{
+    background-color: #808080;
+    color: #fff;
+}
+
 /* ESTILOS DO FOOTER */
 footer{
     width: 100vw;
