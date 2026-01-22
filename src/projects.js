@@ -1,4 +1,5 @@
 import { state, updateState } from './state.js';
+import { format } from 'date-fns';
 
 // CRIAR UM PROJETO
 export function createProject(title) {
@@ -51,6 +52,8 @@ export function removeProject(projectId) {
 };
 
 // PROJETO PADRAO
+const now = new Date();
+
 export function inicializeDefaultProject() {
     const defaultProject = {
         id: 0,
@@ -63,6 +66,9 @@ export function inicializeDefaultProject() {
                 due: '01-01-2026',
                 priority: 'normal',
                 isDefault: true,
+                checked: false,
+                createdAt: now.toISOString(),
+                displayDate: format(now, 'dd/MM/yyyy'),
             },
         ],
         isDefault: true,

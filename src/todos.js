@@ -1,5 +1,6 @@
 import { getActiveProject } from './projects.js';
 import { state, updateState } from './state.js';
+import { format } from 'date-fns';
 
 // CRIAR TAREFAS CON DADOS VINDOS DO FORMULARIO
 export function createTodo(data) {
@@ -9,6 +10,8 @@ export function createTodo(data) {
         return;
     }
 
+    const now = new Date();
+
     project.todos.push({
         id: crypto.randomUUID(),
         title: data.title,
@@ -16,7 +19,8 @@ export function createTodo(data) {
         due: data.due,
         priority: data.priority,
         checked: false,
-        
+        createdAt: now.toISOString(),
+        displayDate: format(now, 'dd/MM/yyyy'),
     });
 
     updateState();

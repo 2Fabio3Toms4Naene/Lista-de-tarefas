@@ -57,11 +57,6 @@ export function renderTodos() {
 
     containerAddTodoButton.appendChild(addButton);
 
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-
     project.todos.forEach(todo => {
         const div = document.createElement('div');
         div.className = 'todo-item';
@@ -76,7 +71,7 @@ export function renderTodos() {
             <div class='container-details-todo'>
                 <button class='details-todo'>Detalhes</button>
                 <button class='edit-todo'>Editar</button>
-                <strong>${day}-${month}-${year}</strong>
+                <strong>${todo.displayDate}</strong>
                 <button class='remove-todo'>
                 <img src='${iconDelete}' alt='deletar' class='icon-delete-todo'>
                 </button>
